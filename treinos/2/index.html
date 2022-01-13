@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-escale=1.0">
+    <title>Gal</title>
+    <style>
+        h1{
+            font-family: Gill Sans
+        }
+        body{
+            background-color: #232323;
+            color: white;
+            font: normal 10pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>O Gal é só um trouxa mesmo</h1>
+    <hr>
+    <p>Como vimos, Gal foi traído por Kian coitado, mas ele também fez muita merda, não dá pra passar pano<br/></p>
+    <script>
+        window.alert('Gal broxa'.toUpperCase())
+        window.confirm('Concorda comigo? ')
+        var n1 = window.prompt('Lança de um número aí pra nós!')
+        var n2 = window.prompt('Segundo também, de malandro')
+        var n1 = Number(n1)
+        var n2 = Number(n2)
+        var sum = (n1 + n2).toFixed(2).replace('.', ',')
+        document.write(`Com isso a gente pode ver que: <strong>${n1} + ${n2} = ${sum}</strong><br/>`)
+        var atoa = 'guaraná'
+        document.write(`A palavra ${atoa} tem ${atoa.length} letras :)<br/>`)
+        var value = 765
+        document.write(
+            value.toLocaleString('pt-BR', {'style':'currency', 'currency':'BRL'})
+            )
+    </script>
+</body>
+</html>

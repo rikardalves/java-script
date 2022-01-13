@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!--aprendi quebra de linha e uns métodos e atributos de algumas classes aí.
+        Apesar de bagunçado se precisar reveja direitinho esse doc-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+        h1{
+            color: yellow;
+            font-family: Verdana;
+            font-size: 25pt;
+            /*background-color: slategrey;*/
+        }
+        body{
+            background-color: rgb(56, 56, 56);
+            color: white;
+            font: normal 11pt Arial;    
+        }
+    </style>
+</head>
+<body>
+    <h1>Treino para relembrar as coisas</h1>
+    <hr>
+    <p>Vamos ver se consigo fazer tudo que eu aprendi até agora.</p>
+    <!--Teste de comentário-->
+    <p>Inclusive quase me esqueço das linhas horizontais</p>
+    <p1>p1 é maior do que p em, tô sentindo</p1>
+    <p1>VAMBOORA!! LEMBREI DE COMO PASSAR PRA FLOAT E INT</p1>
+    <p1>Ué! p1 junta com o outro...!</p1>
+    <p>teste</p>
+    <p>com esse</p>
+    <p2>teste</p2>
+    <p2>com p2<br/></p2>
+    <script>
+        window.alert('Isso aqui acho que é easy')
+        var question = window.confirm('Quero testar fazer uma conta de soma aqui, manda aí')
+        /* Apenas Number passa o número para o mais apropriado,sendo float ou int
+           Já Number.parseFloat/parseInt passa para o que foi especificado*/
+        // Teste da segunda forma de comentário
+        /* Se passarmos ambas as var que recebem os númerospara Number,
+        se ela não receber nenhum valor ela considera 0 e não NaN*/
+        var n1 = Number.parseFloat(window.prompt('Digita aqui'))
+        var n2 = Number(window.prompt('Número 2: '))
+        var sum = String(n1 + n2).toUpperCase()
+        // .toString() é só pra mostrar a outra forma
+        var sum = (n1 + n2).toFixed(2).replace('.', ',').toString()
+        document.write(`<strong>${n1 + n2}, ${typeof (n1 + n2)}. ${sum}, ${typeof sum}</strong>`)
+        document.write('grhghaiwejgawe'.length)
+        document.write(8)
+    </script>
+</body>
+</html>
