@@ -9,7 +9,7 @@
         body{
             color: white;
             position: relative;
-            background-color: rgb(46, 46, 46);
+            background-color: #2e2e2e;
             height: 97vh;
             width: 97vw;
         }
@@ -18,7 +18,7 @@
             position: absolute;
             color: black;
             background-color: white;
-            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.103);
+            text-shadow: 0px 0px 2px #0000001a;
             padding: 5px 15px;
             border-radius: 8px;
             left: 50%;
@@ -31,11 +31,45 @@
     <main>
         <h1>Iniciando Estudos DOM</h1>
         <p>Aqui vai o resultado</p>
-        <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+        <p id="especial">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+        <p name="random">Podemos usar vários métodos</p>
+        <p class="aditional">Para acessar</p>
+        <p>Determinados elementos</p>
     </main>
 
     <script>
-        window.document.write(window.document.URL)
+        window.document.write(`${window.document.URL} <br>`)
+        window.document.write(`Navegador: ${window.navigator.appName} <br>`)
+
+        /* MÉTODOS DE ACESSO */
+
+        // Marca
+        var p = document.getElementsByTagName('p')[0]
+        document.write(`Escrita literal: ${p.innerHTML} <br>`)
+        document.write(`Escrita textual: ${p.innerText} <br>`)
+        p.style.backgroundColor = 'lightgray'
+
+        // ID
+        var p1 = document.getElementById('especial')
+        p1.style.backgroundColor = 'green'
+        p1.style.color = 'white'
+        p1.style.textAlign = 'center'
+
+        // Name
+        var p2 = document.getElementsByName('random')[0]
+        p2.innerText = 'Usa-se diferentes métodos'
+        p2.style.fontStyle = 'italic'
+
+        // Classe
+        var p3 = document.getElementsByClassName('aditional')[0]
+        p3.style.border = '2px dashed black'
+        p3.style.padding = '3px'
+        p3.style.textAlign = 'center'
+
+        // Seletor
+        var p4 = window.document.querySelector('p.aditional')
+        p4.style.color = 'white'
+        p4.style.backgroundColor = 'red'
     </script>
 </body>
 </html>
