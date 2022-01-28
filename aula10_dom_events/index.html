@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        :root{
+            --distance: 90px;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: rgb(70, 70, 70);
+        }
+        p{
+            font-size: 0.9em;
+        }
+
+        #hidden > h1{
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #hidden{
+            position: absolute;
+            display: none;
+            background-color: rgb(19, 19, 19);
+            padding-top: 1px;
+            border-radius: 10px;
+            width: 550px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .container{
+            position: relative;
+            height: 280px;
+        }
+
+        .container > .box, #box4_3_click{
+            position: absolute;
+            background-color: maroon;
+            border-radius: 5px;
+            margin: 10px;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .box, #box4_3_click{
+            color: maroon;
+            font-size: 2em;
+            text-align: center;
+            line-height: 70px;
+            transition-duration: 0.5s;
+        }
+
+        .box:hover{
+            color: white;
+            transition-duration: 0.5s;
+        }
+
+        div#box2{
+            left: var(--distance);
+        }
+
+        div#box3{
+            left: calc(var(--distance) * 2)
+        }
+
+        div#box4{
+            left: calc(var(--distance) * 3);
+        }
+
+        div#box5{
+            left: calc(var(--distance) * 4);
+        }
+
+        div#box6{
+            left: calc(var(--distance) * 5);
+        }
+
+        /* Linha 2 */
+        div#box1_2{
+            top: var(--distance);
+        }
+        
+        div#box2_2{
+            left: var(--distance);
+            top: var(--distance);
+        }
+
+        div#box3_2{
+            left: calc(var(--distance) * 2);
+            top: var(--distance);
+        }
+
+        div#box4_2{
+            left: calc(var(--distance) * 3);
+            top: var(--distance);
+        }
+
+        div#box5_2{
+            left: calc(var(--distance) * 4);
+            top: var(--distance);
+        }
+
+        div#box6_2{
+            left: calc(var(--distance) * 5);
+            top: var(--distance);
+        }
+
+        /* Linha 3 */
+        div#box1_3{
+            top: calc(var(--distance) * 2);
+        }
+
+        div#box2_3{
+            left: var(--distance);
+            top: calc(var(--distance) * 2);
+        }
+
+        div#box3_3{
+            left: calc(var(--distance) * 2);
+            top: calc(var(--distance) * 2);
+        }
+
+        #box4_3_click{
+            left: calc(var(--distance) * 3);
+            top: calc(var(--distance) * 2);
+        }
+
+        #box4_3_click:hover{
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition-delay: 0.5;
+            transition-duration: 2s;
+        }
+
+        div#box5_3{
+            left: calc(var(--distance) * 4);
+            top: calc(var(--distance) * 2);
+        }
+
+        div#box6_3{
+            left: calc(var(--distance) * 5);
+            top: calc(var(--distance) * 2);
+        }
+
+        span.no_arrow{
+            font-size:12px;
+            line-height: 1.5em;
+            padding-top: 20px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Página com eventos DOM</h1>
+    <p>
+        Esta é uma página com alguns eventos DOM em algumas partes de seu <span id="target">conteúdo</span>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, vitae maxime! Laboriosam, harum. Nisi iste vel, reprehenderit quidem nam soluta assumenda doloribus, quos maiores non tempora similique, mollitia a odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur ipsam omnis alias laboriosam corrupti et quidem explicabo error tempora neque at dicta praesentium eligendi, deserunt perspiciatis ducimus non ex.
+    </p>
+    <p>
+        Procure por <span id="focus">esses</span> pequenos eventos ao longo desse texto, quem sabe se não tem algo escondido entre todas essas palavras que estou digitando agora. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta odit illo veniam consequatur doloribus magnam ad nobis? Ad ratione beatae totam architecto, sequi accusamus saepe fuga necessitatibus ab voluptas similique.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi! Doloremque quis aspernatur commodi accusamus amet autem dolorem expedita, est nulla omnis necessitatibus odit accusantium, a sit veritatis deleniti enim! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium dolore, dicta sint tempore, ipsa animi amet consequuntur blanditiis provident libero quaerat omnis unde porro, nulla dolores consectetur magni ad excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, temporibus iusto modi ipsa incidunt dignissimos minima suscipit ratione? Amet asperiores dicta nihil, blanditiis expedita quo suscipit incidunt ab doloribus dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus, exercitationem repellendus ad sed optio minima quae, aperiam corrupti vero porro suscipit, laudantium fugiat pariatur ipsum aliquam quo reiciendis delectus!
+    </p>
+    <div id="hidden">
+        <h1>Siga as setas</h1>
+        <div class="container">
+            <div id="box1" class="box">&darr;</div>
+            <div id="box2" class="box">&rarr;</div>
+            <div id="box3" class="box">&rarr;</div>
+            <div id="box4" class="box">&rarr;</div>
+            <div id="box5" class="box">&rarr;</div>
+            <div id="box6" class="box">&darr;</div>
+        
+            <!-- Linha 2 -->
+            <div id="box1_2" class="box">&darr;</div>
+            <div id="box2_2" class="box">&uarr;</div>
+            <div id="box3_2" class="box">&rarr;</div>
+            <div id="box4_2" class="box">&rarr;</div>
+            <div id="box5_2" class="box"><span class="no_arrow">As certas</span></div>
+            <div id="box6_2" class="box">&darr;</div>
+            <!-- Linha 3 -->
+            <div id="box1_3" class="box">&rarr;</div>
+            <div id="box2_3" class="box">&rarr;</div>
+            <div id="box3_3" class="box">&uarr;</div>
+            <a href="pag2.html" id="box4_3_click" class="box"><span class="no_arrow"></span></a>
+            <div id="box5_3" class="box">&larr;</div>
+            <div id="box6_3" class="box">&larr;</div>
+        </div>
+    </div>
+    <script>
+        var foco = window.document.querySelector('span#focus')
+        var target = document.querySelector('span#target')
+
+        /* Eventos no span de id focus */
+        foco.addEventListener('mouseenter', to_reveal)
+        foco.addEventListener('mouseout', to_conceal)
+
+        function to_reveal(){ 
+            target.innerText = 'Clique aqui'
+            target.style.color = 'red'
+        }
+        function to_conceal(){
+            target.innerText = 'conteúdo'
+            target.style.color = 'white'
+        }
+
+        /* Eventos no span de id target */
+        target.addEventListener('click', show)
+
+        function show(){
+            var container = document.querySelector('#hidden')
+
+            container.style.display = 'block'
+            target.style.color = 'red'
+        }
+    </script>
+</body>
+</html>
