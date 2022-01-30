@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha de operação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cálculo</h1>
+    <p>
+        Primeiro valor: 
+        <input type="number" name="value_1" id="value_1">
+    </p>
+    <p>
+        Segundo valor: 
+        <input type="number" name="value_2" id="value_2">
+    </p>
+    <div>
+        <!-- Somar -->
+        <input type="radio" name="operation" id="sum" checked>
+        <label for="sum">Somar</label>
+
+        <!-- Subtrair -->
+        <input type="radio" name="operation" id="subtract">
+        <label for="subtract">Subtrair</label>
+
+        <!-- Multiplicar -->
+        <input type="radio" name="operation" id="multiply">
+        <label for="multiply">Multiplicar</label>
+
+        <!-- Dividir -->
+        <input type="radio" name="operation" id="division">
+        <label for="division">Dividir</label>
+
+        <!-- Potência -->
+        <input type="radio" name="operation" id="potency">
+        <label for="potency">Potência</label>
+
+
+    </div>
+    <p><input type="button" value="Calcular" onclick="calc()"></p>
+    <p id="result">Resultado: 0</p>
+    <script src="scripts.js"></script>
+</body>
+</html>
